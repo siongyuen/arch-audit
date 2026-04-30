@@ -1,0 +1,26 @@
+# arch-audit configuration
+# Override default rules for your solution
+
+rules:
+  layer:
+    # No UI/Web projects referencing data layers directly
+    forbidden_refs:
+      - from: "*.UI"
+        to: "*.Data"
+      - from: "*.UI"
+        to: "*.Infrastructure"
+      - from: "*.Web"
+        to: "*.Data"
+      - from: "*.Web"
+        to: "*.Infrastructure"
+
+  circular_deps:
+    enabled: true
+
+  naming:
+    # All projects should be under src/
+    src_directory_only: true
+
+  coupling:
+    # Max direct dependencies per project
+    max_direct_refs: 5

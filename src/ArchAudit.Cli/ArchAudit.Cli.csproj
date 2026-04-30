@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>arch-audit</ToolCommandName>
+    <PackageId>arch-audit</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Title>arch-audit</Title>
+    <Authors>siongyuen</Authors>
+    <Description>Architecture governance for .NET solutions — catch forbidden cross-layer refs, circular deps, and naming convention breaks before they hit production.</Description>
+    <PackageTags>architecture;governance;audit;.net;clean-architecture;analysis</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/siongyuen/arch-audit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/siongyuen/arch-audit</PackageProjectUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    <PackageReference Include="YamlDotNet" Version="16.2.1" />
+  </ItemGroup>
+
+</Project>
