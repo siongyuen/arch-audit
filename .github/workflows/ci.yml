@@ -19,16 +19,16 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore src/
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build src/ --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test src/ArchAudit.Tests/ArchAudit.Tests.csproj --configuration Release --no-build --verbosity normal
 
       - name: Pack
-        run: dotnet pack --configuration Release --no-build --output ./nupkg
+        run: dotnet pack src/ArchAudit.Cli/ArchAudit.Cli.csproj --configuration Release --no-build --output ./nupkg
 
       - name: Upload NuGet package
         uses: actions/upload-artifact@v4
